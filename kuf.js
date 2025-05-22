@@ -37,9 +37,10 @@ function solucion(){
 
 /*RESOLVEMOS*/
 	gauss(Kdd, Fc, ved.length, Ud);
-/*	
+
+	console.log("DESPLAZAMIENTOS");
 	console.log(Ud);
-*/
+
 
 /*HALLAMOS LAS REACCIONES*/
 	matXvec(Kcc, Uc, vec.length, vec.length, Fr1);
@@ -47,15 +48,17 @@ function solucion(){
 	for (let i = 0; i < vec.length; i++) {
 		Fd[i] = Fr1[i] + Fr2[i];
 	}
-/*
+
+	console.log("REACCIONES:");
 	console.log(Fd);
-*/
+
 
 /*HALLAMOS LAS FUERZAS EN LOS ELEMENTOS*/
 	for (let i = 0; i < b; i++) {
 		Felm(i);
 	}
-	
+
+	console.log("FUERZAS INTERNAS");
 	console.log(Vres);
 	
 
